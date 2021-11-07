@@ -29,9 +29,9 @@ class MainActivity : BaseActivity() {
 
         requestPermission {  }
         super.onCreate(savedInstanceState)
-        val tm = getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
-        telnum = tm.line1Number
-        Log.d("TelephonNumber","${telnum}")
+        //val tm = getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
+        //telnum = tm.line1Number
+        //Log.d("TelephonNumber","${telnum}")
         setContentView(R.layout.activity_main)
         hash=Utility.getKeyHash(this)
         bind.apply{
@@ -67,6 +67,7 @@ class MainActivity : BaseActivity() {
         UserApiClient.instance.loginWithKakaoTalk(this) { token, error ->
             if (error != null) {
                 Log.e(TAG, "로그인 실패 ${hash}", error)
+                KakaoLogin2()
             }
             else if (token != null) {
                 Log.i(TAG, "로그인 성공 ${token.accessToken}")
@@ -100,9 +101,9 @@ class MainActivity : BaseActivity() {
                 android.Manifest.permission.READ_EXTERNAL_STORAGE,
                 android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
                 android.Manifest.permission.ACCESS_COARSE_LOCATION,
-                android.Manifest.permission.ACCESS_FINE_LOCATION,
-                android.Manifest.permission.READ_PHONE_NUMBERS,
-                android.Manifest.permission.READ_PHONE_STATE
+                android.Manifest.permission.ACCESS_FINE_LOCATION//,
+                //android.Manifest.permission.READ_PHONE_NUMBERS,
+                //android.Manifest.permission.READ_PHONE_STATE
             )
             .check()
     }
