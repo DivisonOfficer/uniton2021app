@@ -13,9 +13,15 @@ Kotlin
 
 
 
+
 Koin
+
 ViewModel
+
 RecyclerView
+
 Retrofit
+
 Okhttp
+
 LiveData
