@@ -20,8 +20,8 @@ ViewModel
 
 RecyclerView
 
-Retrofit
+Retrofit2
 
-Okhttp
+Okhttp3
 
 LiveData
